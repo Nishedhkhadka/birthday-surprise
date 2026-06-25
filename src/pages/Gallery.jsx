@@ -10,15 +10,15 @@ function Gallery() {
       <img
         src="./images/image3.jpg"
         alt="/images/image3.jpg"
-        width="350"
-        height={350}
+        width="200"
+        height={200}
       />
 
       <img
         src="/images/image2.jpg"
         alt="photo2"
-        width="350"
-        height={350}
+        width="200"
+        height={200}
       />
 
       <br />
