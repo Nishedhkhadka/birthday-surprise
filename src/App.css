@@ -1,69 +1,354 @@
-body {
+/* =========================
+GLOBAL STYLES
+========================= */
+
+* {
   margin: 0;
-  font-family: sans-serif;
-  background: #111;
-  color: white;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+background: radial-gradient(
+circle at top,
+#1c1c1c,
+#0d0d0d 60%,
+#000000
+);
+
+color: #f5f5f5;
+font-family: "Poppins", sans-serif;
+overflow-x: hidden;
+min-height: 100vh;
 }
+
+/* =========================
+PAGE LAYOUT
+========================= */
 
 .page {
-  min-height: 100vh;
+min-height: 100vh;
 
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 
-  justify-content: center;
-  align-items: center;
+justify-content: center;
+align-items: center;
 
-  gap: 20px;
+text-align: center;
+
+padding: 24px;
+
+position: relative;
+z-index: 10;
 }
+
+/* =========================
+HEADINGS
+========================= */
+
+h1 {
+font-size: clamp(2.2rem, 8vw, 4rem);
+
+color: #ff8c42;
+
+text-shadow:
+0 0 10px #ff8c42,
+0 0 20px #ff8c42,
+0 0 40px #ff6b00;
+
+margin-bottom: 20px;
+}
+
+h2 {
+font-size: clamp(1.1rem, 4vw, 1.8rem);
+
+color: #ffd166;
+
+max-width: 600px;
+
+margin-bottom: 20px;
+
+line-height: 1.6;
+}
+
+p {
+font-size: 1rem;
+
+color: #d9d9d9;
+
+line-height: 1.7;
+
+max-width: 700px;
+}
+
+/* =========================
+BUTTONS
+========================= */
 
 button {
-  padding: 12px 24px;
-  cursor: pointer;
+margin-top: 25px;
+
+border: none;
+
+padding: 14px 28px;
+
+border-radius: 999px;
+
+cursor: pointer;
+
+font-size: 1rem;
+font-weight: 600;
+
+background: linear-gradient(
+135deg,
+#ff6b00,
+#ff922b
+);
+
+color: white;
+
+transition: all 0.3s ease;
+
+box-shadow:
+0 0 10px rgba(255, 107, 0, 0.5),
+0 0 25px rgba(255, 107, 0, 0.3);
 }
 
-.balloon {
-  position: fixed;
-  bottom: -200px;
-  pointer-events: none;
-  z-index: 1;
+button:hover {
+transform: translateY(-3px) scale(1.05);
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+box-shadow:
+0 0 20px rgba(255, 107, 0, 0.7),
+0 0 40px rgba(255, 107, 0, 0.5);
+}
+
+/* =========================
+MUSIC BUTTON
+========================= */
+
+.music-control,
+.music-btn {
+position: fixed;
+
+top: 20px;
+right: 20px;
+
+z-index: 9999;
+
+width: 55px;
+height: 55px;
+
+border-radius: 50%;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+font-size: 1.3rem;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+img {
+max-width: 90%;
+border-radius: 20px;
+
+margin: 12px;
+
+box-shadow:
+0 0 15px rgba(255, 255, 255, 0.1),
+0 0 35px rgba(255, 140, 66, 0.2);
+
+transition: 0.4s;
+}
+
+img:hover {
+transform: scale(1.05);
+}
+
+/* =========================
+GALLERY GRID
+========================= */
+
+.gallery {
+display: grid;
+
+grid-template-columns: 1fr;
+
+gap: 16px;
+
+width: 100%;
+
+max-width: 900px;
+
+margin-top: 20px;
+}
+
+/* =========================
+COUNTDOWN
+========================= */
+
+.countdown {
+font-size: 7rem;
+
+color: #ff6b00;
+
+text-shadow:
+0 0 20px #ff6b00,
+0 0 50px #ff6b00;
+}
+
+/* =========================
+TYPEWRITER TEXT
+========================= */
+
+.typewriter {
+font-size: 1.5rem;
+
+max-width: 800px;
+
+color: #ffffff;
+
+border-right: 3px solid #ff922b;
+
+animation: blink 1s infinite;
+}
+
+@keyframes blink {
+50% {
+border-color: transparent;
+}
+}
+
+/* =========================
+BALLOONS
+========================= */
+
+.balloon {
+position: fixed;
+
+bottom: -250px;
+
+pointer-events: none;
+
+z-index: 1;
+
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .balloon-body {
-  width: 100%;
-  height: 100%;
+border-radius: 50% 50% 45% 45%;
 
-  border-radius: 50% 50% 45% 45%;
-
-  position: relative;
-
-  box-shadow:
-    inset -10px -10px 20px rgba(0,0,0,0.15),
-    inset 10px 10px 20px rgba(255,255,255,0.2);
+box-shadow:
+inset -10px -10px 20px rgba(0,0,0,.2),
+inset 10px 10px 20px rgba(255,255,255,.15),
+0 0 20px rgba(255,255,255,.15);
 }
 
 .balloon-body::after {
-  content: "";
+content: "";
 
-  position: absolute;
-  top: 12px;
-  left: 10px;
+position: absolute;
 
-  width: 12px;
-  height: 20px;
+top: 10px;
+left: 12px;
 
-  border-radius: 50%;
+width: 12px;
+height: 20px;
 
-  background: rgba(255,255,255,0.4);
+background: rgba(255,255,255,.35);
+
+border-radius: 50%;
 }
 
 .string {
-  width: 2px;
-  height: 80px;
+width: 2px;
+height: 90px;
 
-  background: rgba(255,255,255,0.7);
+background: rgba(255,255,255,.6);
+}
+
+/* =========================
+SPOOKY BACKGROUND
+========================= */
+
+body::before {
+content: "";
+
+position: fixed;
+
+inset: 0;
+
+background:
+radial-gradient(
+circle at 20% 20%,
+rgba(255,140,66,.1),
+transparent 20%
+),
+radial-gradient(
+circle at 80% 30%,
+rgba(255,107,0,.08),
+transparent 25%
+);
+
+pointer-events: none;
+
+z-index: -1;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 768px) {
+h1 {
+font-size: 2.3rem;
+}
+
+h2 {
+font-size: 1.2rem;
+}
+
+p {
+font-size: 0.95rem;
+}
+
+.countdown {
+font-size: 5rem;
+}
+
+button {
+width: 100%;
+max-width: 280px;
+}
+
+.gallery {
+grid-template-columns: 1fr;
+}
+}
+
+/* =========================
+FINAL BIRTHDAY PAGE
+========================= */
+
+.birthday-message {
+background: rgba(255,255,255,.05);
+
+backdrop-filter: blur(10px);
+
+padding: 30px;
+
+border-radius: 25px;
+
+border: 1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 0 25px rgba(255,140,66,.15);
+
+max-width: 800px;
 }

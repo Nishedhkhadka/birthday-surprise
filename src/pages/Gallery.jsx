@@ -8,7 +8,7 @@ function Gallery() {
       <h1></h1>
 
       <img
-        src="./images/image1.jpg"
+        src="./images/image3.jpg"
         alt="/images/image3.jpg"
         width="350"
         height={350}

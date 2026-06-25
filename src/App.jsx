@@ -6,6 +6,7 @@ import Mystery from "./pages/Mystery";
 import Gallery from "./pages/Gallery";
 import Countdown from "./pages/Countdown";
 import Birthday from "./pages/Birthday";
+import "./App.css";
 
 function App() {
   return (

@@ -37,6 +37,7 @@ function Birthday() {
         >
           🎂 Happy Birthday Sarah 🎂
         </motion.h1>
+        
 
         <h2>
           May your day be filled with joy, laughter and success.
@@ -45,6 +46,7 @@ function Birthday() {
         <p>
           Thank you for being such a wonderful friend ❤️
         </p>
+        
  {Array.from({ length: 20 }).map((_, index) => (
     <Balloon key={index} />
   ))}
