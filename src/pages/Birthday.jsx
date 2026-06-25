@@ -35,12 +35,12 @@ function Birthday() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5 }}
         >
-          🎂 Happy Birthday Sarah 🎂
+          🎂 Happy Birthday Ankita 🎂
         </motion.h1>
         
 
         <h2>
-          May your day be filled with joy, laughter and success.
+          May your life be filled with joy, laughter and success.
         </h2>
 
         <p>
