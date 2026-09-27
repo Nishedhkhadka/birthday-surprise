@@ -35,7 +35,7 @@ function Birthday() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5 }}
         >
-          🎂 Happy Birthday Ankita 🎂
+          🎂 Happy Birthday Friend 🎂
         </motion.h1>
         
 
